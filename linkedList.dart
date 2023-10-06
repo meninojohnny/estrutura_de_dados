@@ -1,23 +1,40 @@
 import 'node.dart';
 
 class LinkedList {
-  var head;
-  int size = 0;
+  var head = null;
+  int __size = 0;
 
-  LinkedList(){
-    this.head = null;
-  }
+  LinkedList();
 
   void append(elem) {
-    if (head) {
+
+    if (__size > 0) {
+
       Node pointer = head;
       while (pointer.next) {
         pointer = pointer.next;
       }
       pointer.next = Node(elem);
-      size++;
+      __size++;
+
     } else {
+      __size++;
       head = Node(elem);
+
     }
   }
+
+  int len() {
+    return __size;
+  }
+
+  get(index) {
+    Node pointer = head;
+    for (int i = 0;i != index;i++) {
+      pointer = pointer.next;
+    }
+    print(pointer.data);
+
+  }
+
 }

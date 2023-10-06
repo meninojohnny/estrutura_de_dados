@@ -10,8 +10,8 @@ class Pilha {
     items.add(item);
   }
 
-  pop() {
-    return items.removeLast();
+  void pop() {
+  print(items.removeLast());
   }
 
   int peek() {
